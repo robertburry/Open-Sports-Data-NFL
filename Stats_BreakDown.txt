@@ -1,0 +1,23 @@
+Below is how some of the advance stats found in the data set is calculated. 
+ 
+
+
+
+
+
+
+
+calc custom receiving stats
+    season_stats['tgt_sh'] = season_stats['targets'] / season_stats['atts']
+    season_stats['ay_sh'] = season_stats['receiving_air_yards'] / season_stats['p_ayds']
+    season_stats['yac_sh'] = season_stats['receiving_yards_after_catch'] / season_stats['p_yac']
+    season_stats['wopr'] = season_stats['tgt_sh'] * 1.5 + season_stats['ay_sh'] * 0.8
+    season_stats['ry_sh'] = season_stats['receiving_yards'] / season_stats['p_yds']
+    season_stats['rtd_sh'] = season_stats['receiving_tds'] / season_stats['p_tds']
+    season_stats['rfd_sh'] = season_stats['receiving_first_downs'] / season_stats['p_fds']
+    season_stats['rtdfd_sh'] = (season_stats['receiving_tds'] + season_stats['receiving_first_downs']) / (
+                season_stats['p_tds'] + season_stats['p_fds'])
+    season_stats['dom'] = (season_stats['ry_sh'] + season_stats['rtd_sh']) / 2
+    season_stats['w8dom'] = season_stats['ry_sh'] * 0.8 + season_stats['rtd_sh'] * 0.2
+    season_stats['yptmpa'] = season_stats['receiving_yards'] / season_stats['atts']
+    season_stats['ppr_sh'] = season_stats['fantasy_points_ppr'] / season_stats['ppr_pts']
